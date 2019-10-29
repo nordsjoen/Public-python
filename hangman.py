@@ -2,9 +2,9 @@
 
 import random
 import os
-clear = lambda: os.system('cls')
-#function to clear terminal
 
+#function to clear terminal
+clear = lambda: os.system('cls')
 
 word_list = ["actor", "advice", "airport", "alarm", "bait", "ball", "bedroom",
 "boat", "car", "cat", "coal", "clock", "python"]
