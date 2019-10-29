@@ -4,7 +4,7 @@ import random
 import os
 
 #function to clear terminal
-clear = lambda: os.system('cls')
+clear = lambda: os.system('cls' if os.name == 'nt' else 'clear')
 
 word_list = ["actor", "advice", "airport", "alarm", "bait", "ball", "bedroom",
 "boat", "car", "cat", "coal", "clock", "python"]
@@ -42,7 +42,6 @@ def game():
     hangmanword = hangmanword.strip("'[]")
 
     guesses = 6
-    guess = ""
     wrong = ""
     hangman = []
     hidden = []
@@ -67,7 +66,7 @@ def game():
         print(f"Word: {hidden_strip}\n")
 
         hangly(guesses) # Prints hangman
-        guess = input("Please enter a letter :")
+        guess = input("Please enter a letter :").lower()
 
         try:
             # Spellchecker
@@ -128,7 +127,7 @@ print("\nLet's play hangman\n")
 #Loop to check if the player wants to keep playing or not.
 while True:
 
-    play = input("Do you want to play yes or no: ")
+    play = input("Do you want to play yes or no: ").lower()
 
     if play == "yes":
 
